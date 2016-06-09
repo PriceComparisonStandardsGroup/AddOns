@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns="urn:UniversalPriceComparisonServiceStandard/20160505/AddOns" 
+           xmlns:p="urn:UniversalPriceComparisonServiceStandard/20160505/AddOns" 
+           xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+           targetNamespace="urn:UniversalPriceComparisonServiceStandard/20160505/AddOns" 
+           elementFormDefault="qualified" 
+           id="AddOns">
+	<xs:element name="AddOns" type="p:AddOns">
+		<xs:annotation>
+			<xs:documentation xml:lang="en">This schema is a draft proposal for a universal standard for data exchange between all financial services price compassion websites and their product provider partners. This document and proposed standard is in response to the UK FCA legislation ‘PS15/22: Banning opt-out selling across financial services and supporting informed decision making for add-on buyers’</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+  <xs:complexType name="AddOns">
+    <xs:sequence>
+      <xs:element name="AddOn" type="p:AddOn" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Products/Services that can be that can be displayed with the primary product quotation, these Products/Services may be addon-ons that incure additionalcosts or enhancements features for no additional cost</xs:documentation>
+        </xs:annotation>
+        <xs:unique name="noDuplicatePriceFrequencyTypesPerAddon">
+          <xs:selector xpath="p:Price"/>
+          <xs:field xpath="@Frequency"/>
+        </xs:unique>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Incremental">
+    <xs:complexContent>
+      <xs:extension base="p:AddOn">
+        <xs:sequence>
+          <xs:element name="Price" type="p:Price" minOccurs="1" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>Denotes a price to pay for the add on</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+        <xs:attribute name="Financeable" type="xs:boolean" use="required">
+          <xs:annotation>
+            <xs:documentation xml:lang="en">Denotes if a product is Financeable, i.e. true, you can add the add-on amount to the installment repayments, false you must pay a part of the deposit</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Bundled">
+    <xs:complexContent>
+      <xs:extension base="p:AddOn">
+        <xs:sequence>
+          <xs:any namespace="##other" maxOccurs="unbounded" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Free">
+    <xs:complexContent>
+      <xs:extension base="p:AddOn">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+	<xs:complexType name="AddOn" abstract="true">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">A product/service that is included with the primary policy but may incur and additional extra cost</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:any namespace="##local" processContents="lax" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>Allows for insurers an PCWs to add custom data items that may be additional use cases to the core standards</xs:documentation>
+        </xs:annotation>
+      </xs:any>
+    </xs:sequence>
+    <xs:attribute name="Category" type="p:category" use="required">
+      <xs:annotation>
+        <xs:documentation xml:lang="en">Denotes a universal standard name that clearly identifies a financial product/service</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="SubType" type="xs:token" use="required">
+      <xs:annotation>
+        <xs:documentation xml:lang="en">Denotes the partners specfic sub type offering for the addon (i.e. not all Breakdown covers are equal) and will be used to specify a flag in the query string</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+	</xs:complexType>
+  <xs:complexType name="Price">
+    <xs:simpleContent>
+      <xs:extension base="p:amount">
+        <xs:attribute name="Frequency" type="p:frequency" use="required">
+          <xs:annotation>
+            <xs:documentation>Denotes a Payment Frequency (e.g. Annually, Semi Annually, Quarterly, Monthly, Weekly, Daily, Continuous), avoided the name type to avoid auot generated proxy class complications</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="frequency">
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="Annually">
+        <xs:annotation>
+          <xs:documentation>denotes a annual amount to be payed</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Monthly">
+        <xs:annotation>
+          <xs:documentation>denotes a monthly amount to be payed</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Quarterly">
+        <xs:annotation>
+          <xs:documentation>denotes a quarterly amount to be payed</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="inclusion">
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="Bundled">
+        <xs:annotation>
+          <xs:documentation>Have queried this with Adam from Compare The Market</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Free">
+        <xs:annotation>
+          <xs:documentation>Have queried this with Adam from Compare The Market</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Incremental">
+        <xs:annotation>
+          <xs:documentation>Have queried this with Adam from Compare The Market</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+	<xs:simpleType name="category">
+		<xs:annotation>
+			<xs:documentation xml:lang="en">This is the proposed draft list of product services that can be displayed with the primary product quotation. Items can be added to this list, but once published, items cannot be changed in their definition or removed. Any breaking changes will require a new schema version. Currently this list contains products/services that we know the majorty off partners have returned in thier response</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:ID">
+			<xs:enumeration value="LegalExpenses">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">Covers the cost of any legal expenses incurred while settling an insurance claim.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+      <xs:enumeration value="Breakdown">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Roadside Assistance and Recovery Cover.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ProtectedNoClaimsBonus">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Savegaurds a customers no claims bonus in the event of a claim.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CourtesyCar">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Temp replacement vehicle if your car if your vehicle is off the road.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Gadget">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Insures Gadgets such as IWatches, Goggle glasses etc</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+  <xs:simpleType name="amount">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">Represents a non ngeative, non zero money value for a decimal currency system</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:decimal">
+      <xs:fractionDigits value="2"/>
+      <xs:minInclusive value="0.01"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>
