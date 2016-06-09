@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns="urn:UniversalPriceComparisonServiceStandard/20160505/AddOns" 
            xmlns:p="urn:UniversalPriceComparisonServiceStandard/20160505/AddOns" 
            xmlns:xs="http://www.w3.org/2001/XMLSchema" 
@@ -128,36 +128,36 @@
     </xs:restriction>
   </xs:simpleType>
 	<xs:simpleType name="category">
-		<xs:annotation>
-			<xs:documentation xml:lang="en">This is the proposed draft list of product services that can be displayed with the primary product quotation. Items can be added to this list, but once published, items cannot be changed in their definition or removed. Any breaking changes will require a new schema version. Currently this list contains products/services that we know the majorty off partners have returned in thier response</xs:documentation>
-		</xs:annotation>
-		<xs:restriction base="xs:ID">
-			<xs:enumeration value="LegalExpenses">
-				<xs:annotation>
-					<xs:documentation xml:lang="en">Covers the cost of any legal expenses incurred while settling an insurance claim.</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-      <xs:enumeration value="Breakdown">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Roadside Assistance and Recovery Cover.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="ProtectedNoClaimsBonus">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Savegaurds a customers no claims bonus in the event of a claim.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="CourtesyCar">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Temp replacement vehicle if your car if your vehicle is off the road.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Gadget">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Insures Gadgets such as IWatches, Goggle glasses etc</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-		</xs:restriction>
+      <xs:annotation>
+          <xs:documentation xml:lang="en">This is the proposed draft list of product services that can be displayed with the primary product quotation. Items can be added to this list, but once published, items cannot be changed in their definition or removed. Any breaking changes will require a new schema version. Currently this list contains products/services that we know the majorty off partners have returned in thier response</xs:documentation>
+      </xs:annotation>
+      <xs:restriction base="xs:token">
+          <xs:enumeration value="LegalExpenses">
+              <xs:annotation>
+                  <xs:documentation xml:lang="en">Covers the cost of any legal expenses incurred while settling an insurance claim.</xs:documentation>
+              </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="Breakdown">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Roadside Assistance and Recovery Cover.</xs:documentation>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="ProtectedNoClaimsBonus">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Savegaurds a customers no claims bonus in the event of a claim.</xs:documentation>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="CourtesyCar">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Temp replacement vehicle if your car if your vehicle is off the road.</xs:documentation>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="Gadget">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Insures Gadgets such as IWatches, Goggle glasses etc</xs:documentation>
+            </xs:annotation>
+          </xs:enumeration>
+      </xs:restriction>
 	</xs:simpleType>
   <xs:simpleType name="amount">
     <xs:annotation>
