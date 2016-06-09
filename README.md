@@ -57,7 +57,7 @@ The tiers will be identified by the min and max price brackets for the total cos
 
     <!--Scenario A: a bundled add-on, as a bundled item cannot be removed from the primary cover, as such does not have a price. Also we have permitted an optional link to a web page URL that contains further information about the add-on-->
 
-	<p:AddOn xsi:type="p:Bundled" Category="LegalExpenses" SubType="lg22568" MoreInfo="http://www.FakeSure.com/addondetail/lg22568"/>
+	<p:AddOn xsi:type="p:Bundled" Category="LegalExpenses" SubType="lg22568"/>
 
     <!--Scenario B: a free add-on is has no price, but it can be removed by customer selection-->
 
@@ -65,13 +65,13 @@ The tiers will be identified by the min and max price brackets for the total cos
 
 	 <!--Scenario C: an add-on that incurs extra cost, in this case the add-on on can be added to the credit agreement so will result in tier selection-->
 
-	<p:AddOn xsi:type="p:Incremental" Category="Breakdown" SubType="bgPlus" MoreInfo="http://www.FakeSure.com/addondetail/bgPlus" Financeable="true">
+	<p:AddOn xsi:type="p:Incremental" Category="Breakdown" SubType="bgPlus" Financeable="true">
 		<p:Price Frequency="Annually">25.01</p:Price>
 	</p:AddOn>
 
     <!--Scenario D: an add-on that incurs extra cost, in this case the add-on cannot be added to the credit agreement, must be payed up front so does not affect tier selection-->
 
-	<p:AddOn xsi:type="p:Incremental" Category="Gadget" SubType="gdPlus" MoreInfo="http://www.FakeSure.com/addondetail/gdPlus" Financeable="false">
+	<p:AddOn xsi:type="p:Incremental" Category="Gadget" SubType="gdPlus" Financeable="false">
 		<p:Price Frequency="Annually">10</p:Price>
 	</p:AddOn>
 </p:AddOns>
@@ -81,9 +81,22 @@ The tiers will be identified by the min and max price brackets for the total cos
 <?xml version="1.0" encoding="UTF-8"?>
 <c:CreditAgreements xsi:schemaLocation="urn:UniversalPriceComparisonServiceStandard/20160505/CreditAgreements CreditAgreements.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:c="urn:UniversalPriceComparisonServiceStandard/20160505/CreditAgreements">
 
-    <!--Scenario A: Standard plan for amounts for £0 to 1500.50, fixed deposit with fixed setup fee, no min Interest with 10 instalments-->
+    <!--Scenario A: Standard plan for amounts for £0 to 999.99, percentage deposit with minimum of £100, fixed setup fee, no min Interest with 10 instalments-->
 
-	<c:Tier Min="0" Plan="Standard" Max="1500.50">
+    <c:Tier Min="0" Plan="Standard" Max="999.99">
+        <c:Finance Term="12" Instalments="10"/>
+        <c:Deposit Min="100" AmountType="Percentage">10</c:Deposit>
+        <c:Interest Percentage="3.79" minimumAmount="0.00"/>
+        <c:Charges>
+            <c:Charge AddToLoan="true" Name="SetupFee">
+                <c:Amount AmountType="Fixed">10.99</c:Amount>
+            </c:Charge>
+        </c:Charges>
+    </c:Tier>
+
+    <!--Scenario B: Standard plan for amounts for £1000 to 1500.50, fixed deposit with fixed setup fee, no min Interest with 10 instalments-->
+
+	<c:Tier Min="1000" Plan="Standard" Max="1500.50">
         <c:Finance Term="12" Instalments="10"/>
 		<c:Deposit AmountType="Fixed">500.50</c:Deposit>
 		<c:Interest Percentage="3.79" minimumAmount="0.00"/>
@@ -94,7 +107,7 @@ The tiers will be identified by the min and max price brackets for the total cos
 		</c:Charges>
 	</c:Tier>
 
-	 <!--Scenario B: Standard plan for amounts for £1500.51 to £5000, percentage deposit with no fees, no min Interest with 10 instalments with a loan cap of £1200-->
+	 <!--Scenario C: Standard plan for amounts for £1500.51 to £5000, percentage deposit with no fees, no min Interest with 10 instalments with a loan cap of £1200-->
 
 	<c:Tier Min="1500.50" Plan="Standard" Max="5000">
 		<c:Finance Term="12" Instalments="10" Cap="1200"/>
@@ -102,7 +115,7 @@ The tiers will be identified by the min and max price brackets for the total cos
 		<c:Interest Percentage="3.79" minimumAmount="0.00"/>
 	</c:Tier>
 
-	<!--Scenario C: Level plan for amounts for £5000.01 to £20000, no deposit with but % setup fee, min interest of £50.99 with interest calculated at 15% with 12 instalments-->
+	<!--Scenario D: Level plan for amounts for £5000.01 to £20000, no deposit with but % setup fee, min interest of £50.99 with interest calculated at 15% with 12 instalments-->
 
 	<c:Tier Min="5000.01" Plan="Level" Max="200000">
 		<c:Finance Term="12" Instalments="12" />
