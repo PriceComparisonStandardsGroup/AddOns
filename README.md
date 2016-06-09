@@ -1,21 +1,21 @@
 # AddOns
 
 ## XML Schema
-[AddOns.xsd](blob/master/Schema/AddOns.xsd)
-[CreditAgreements.xsd](blob/master/Schema/CreditAgreements.xsd)
+[AddOns.xsd](Schema/AddOns.xsd)
+[CreditAgreements.xsd](Schema/CreditAgreements.xsd)
 
-## AddOn Categorie List
+## AddOn Categories List
 
-[AddOn Categories](blob/master/AddOnCategories.md)
+[AddOn Categories](AddOnCategories.md)
 
 ## Finance Plan Definitions
-[Finance Plan](blob/master/Finance/FinancePlan.md)
-[Standard Plan](blob/master/Finance/StandardPlan.md)
-[Level Plan](blob/master/Finance/LevelPlan.md)
+[Finance Plan](Finance/FinancePlan.md)
+[Standard Plan](Finance/StandardPlan.md)
+[Level Plan](Finance/LevelPlan.md)
 
 ## Guidance on Click Through
-[GuidanceOnClickThrough.md](blob/master/GuidanceOnClickThrough.md)
+[GuidanceOnClickThrough.md](GuidanceOnClickThrough.md)
 
 ## Contributor Guidelines
-[ContributorGuidlines.md](blob/master/ContributorGuidlines.md)
+[ContributorGuidlines.md](ContributorGuidlines.md)
 
