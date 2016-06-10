@@ -9,7 +9,7 @@ When we do get a finalised add-on category list, we should use our definition na
 
 The details of the expected repayment plan, this is to allow insurers to identify a mismatch between the insurer and PCW repayment plan algorithm and report the issue and remedy this situation. This error condition should only occur if a new type of algorithm is invented that is not defined in the standards.      
 
-To define a standard, this could be:
+To define the standard:
 - HTTPS transport only, to protect our customers from transaction sniffing.
 - POST only, not only to avoid the message size and encoding restrictions on GETS, also to secure any transactions.
 - Query string parameter names must be case sensitive to the standard Product/Services list we will finally agree on, with a Boolean value, true to denote opt-in.
