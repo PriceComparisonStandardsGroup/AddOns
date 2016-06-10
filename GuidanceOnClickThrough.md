@@ -18,12 +18,12 @@ To define a standard, this could be:
 
 Sample Http Requests (Click-through Requests)
 For example, say we have the following product/services list (note that the URL is an example and does not indicate a standard):
-```
-CourtesyCar (which is a free add-on, it subtype has been defined a ‘basic’ by insurer)
-ProtectedNoClaimsBonus
-Breakdown (with a partner subtype of bdownplus they use to define their top level)
-LegalExpenses
-```
+
+- <b>CourtesyCar</b> (which is a free add-on, it subtype has been defined a ‘basic’ by insurer)
+- <b>ProtectedNoClaimsBonus</b>
+- <b>Breakdown</b> (with a partner subtype of bdownplus they use to define their top level)
+- <b>LegalExpenses</b>
+
 
 In this scenario the customer only wants Breakdown Cover, but allowed the free courtesy car cover to remain selected.
 ```
