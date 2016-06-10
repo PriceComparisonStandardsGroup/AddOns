@@ -6,8 +6,11 @@ It is also debatable if we need to specify if a customers does not want a free a
 For Add-ons that incur additional cost we will need to provide opt-in flags on click through and also denote the sub type of add-on that was selected. 
 
 We already have a precedence to do this for items such as protected no claims bonus and legal cover using HTTP Form POST of a query string. We suggest keep to this as it is the lowest common denominator, and we know that the majority of our partners support this.
-It will also make it very easy for PCWs to implement this feature in the presentation layer, however it is prudent for a PCW to log customer interaction for compliance and customer support reasons.      
+It will also make it very easy for PCWs to implement this feature in the presentation layer, however it is prudent for a PCW to log customer interaction for compliance and customer support reasons. 
+
 When we do get a finalised add-on category list, we should use our definition names as the ‘name’ of a query string parameter, and the ‘value’ to denote the sub type the customer has selected.
+
+The details of the expected repayment plan, this is to allow insurers to identify a mismatch between the insurer and PCW repayment plan algorithm and report the issue and remedy this situation. This error condition should only occur if a new type of algorithm is invented that is not defined in the standards.      
 
 To define a standard, this could be:
 - HTTPS transport only, to protect our customers from transaction sniffing.
