@@ -14,6 +14,7 @@ To define a standard, this could be:
 - POST only, not only to avoid the message size and encoding restrictions on GETS, also to secure any transactions.
 - Query string parameter names must be case sensitive to the standard Product/Services list we will finally agree on, with a Boolean value, true to denote opt-in.
 - Omitted parameters we will be an implicit opt-out, but can be defined explicitly. This will allow add-on variety growth without breaking the standard and accidentally opting-in customers for new products.  
+- We need to send paramiters that denote the <i>expected</i> annual and monthly repayment plans as means to allow for the insurer to detect significant repayment calculation mismatch.
 
 Sample Http Requests (Click-through Requests)
 For example, say we have the following product/services list (note that the URL is an example and does not indicate a standard):
@@ -28,12 +29,12 @@ In this scenario the customer only wants Breakdown Cover, but allowed the free c
 ```
 POST https://www.insurealpha.com/car/buyonline.asp HTTP/1.1
 Host: w3schools.com
-quoteref=19f313b4&BreakdownCover=bdownplus&CourtesyCar=basic 
+quoteref=19f313b4&BreakdownCover=bdownplus&CourtesyCar=basic&Deposit=12.55&Installments=9&InstallmentAmount=12.55&TotalRepayable=125.50&Total=120 
 ```
 
 In this scenario the customer only wants Breakdown Cover, but the PCW has explicitly removed Courtesy Car Cover 
 ```
 POST https://www.insurebeta.com/motor/homepage.php HTTP/1.1
 Host: w3schools.com
-quoteref=19f313b4&BreakdownCover=bdownplus  
+quoteref=19f313b4&BreakdownCover=bdownplus&Deposit=12.55&Installments=9&InstallmentAmount=12.55&TotalRepayable=125.50&Total=120  
 ```
