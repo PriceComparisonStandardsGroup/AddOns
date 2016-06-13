@@ -53,7 +53,8 @@ The tiers will be identified by the min and max price brackets for the total cos
 ## Sample Response Elements - AddOns
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
-<p:AddOns xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="urn:UniversalPriceComparisonServiceStandard/20160505/AddOns">
+<p:AddOns xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	  xmlns:p="urn:UniversalPriceComparisonServiceStandard/20160505/AddOns">
 
     <!--Scenario A: a bundled add-on, as a bundled item cannot be removed from the primary cover, as such does not have a price. Also we have permitted an optional link to a web page URL that contains further information about the add-on-->
 
@@ -79,7 +80,8 @@ The tiers will be identified by the min and max price brackets for the total cos
 ## Sample Response Elements - CreditAgreements
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
-<c:CreditAgreements xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:c="urn:UniversalPriceComparisonServiceStandard/20160505/CreditAgreements">
+<c:CreditAgreements xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		    xmlns:c="urn:UniversalPriceComparisonServiceStandard/20160505/CreditAgreements">
 
     <!--Scenario A: Standard plan for amounts for £0 to 999.99, percentage deposit with minimum of £100, fixed setup fee, no min Interest with 10 instalments-->
 
