@@ -1,4 +1,4 @@
-For the scheam codes for these add-on please see  (Schema/AddOns.xsd) 
+For the scheam codes for these add-on please see [AddOns.xsd](Schema/AddOns.xsd)
 
 Home Insurance | Motor Insurance | Travel Insurance
 --- | --- | ---
