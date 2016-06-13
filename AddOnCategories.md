@@ -1,5 +1,7 @@
 For the scheam codes for these add-on please see [AddOns.xsd](Schema/AddOns.xsd)
 
+This is under review and will be finalised 14/06/2016
+
 Home Insurance | Motor Insurance | Travel Insurance
 --- | --- | ---
 Legal cover | Legal cover | Gadget cover
