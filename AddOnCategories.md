@@ -17,4 +17,4 @@ Breakdown cover | Loss of keys |
 Garden cover | Theft of keys |
 Student cover | Gadget cover |
 Excess protection | Misfuelling cover | 
-|  Excess protection |
+    |  Excess protection |
