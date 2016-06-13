@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns="urn:UniversalPriceComparisonServiceStandard/20160505/AddOns" 
-           xmlns:p="urn:UniversalPriceComparisonServiceStandard/20160505/AddOns" 
+<xs:schema xmlns="urn:PriceComparisonStandardsGroup/20160505/AddOns" 
+           xmlns:p="urn:PriceComparisonStandardsGroup/20160505/AddOns" 
            xmlns:xs="http://www.w3.org/2001/XMLSchema" 
-           targetNamespace="urn:UniversalPriceComparisonServiceStandard/20160505/AddOns" 
+           targetNamespace="urn:PriceComparisonStandardsGroup/20160505/AddOns" 
            elementFormDefault="qualified" 
            id="AddOns">
 	<xs:element name="AddOns" type="p:AddOns">
