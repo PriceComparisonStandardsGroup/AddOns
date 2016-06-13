@@ -3,6 +3,7 @@
            xmlns="urn:PriceComparisonStandardsGroup/20160505/CreditAgreements"
            xmlns:c="urn:PriceComparisonStandardsGroup/20160505/CreditAgreements"
            xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xsi:schemaLocation="https://raw.githubusercontent.com/PriceComparisonStandardsGroup/AddOns/master/Schema/CreditAgreements.xsd"
            targetNamespace="urn:PriceComparisonStandardsGroup/20160505/CreditAgreements"
            elementFormDefault="qualified">
   <xs:element name="CreditAgreements" type="c:CreditAgreements">
