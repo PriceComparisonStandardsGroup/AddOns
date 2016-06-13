@@ -21,7 +21,7 @@
 [ContributorGuidlines.md](ContributorGuidlines.md)
 
 ## Introduction
-This is a draft proposal for a universal standard for data exchange between financial services price compassion websites (PCW) and their product provider partners. This proposed standard is in response to the UK legislation ‘PS15/22: Banning opt-out selling across financial services and supporting informed decision making for add-on buyers’ and defines a suggested format for the point of quote (Insurer Response) and the point of click through (Customer Selection) information exchange.  
+This is a draft specification for a universal standard for data exchange between financial services price compassion websites (PCW) and their product provider partners. This proposed standard is in response to the UK legislation ‘PS15/22: Banning opt-out selling across financial services and supporting informed decision making for add-on buyers’ and defines a suggested format for the point of quote (<i>Insurer Response</i>) and the point of click through (<i>Customer Selection</i>) information exchange.  
 
 ## Design considerations
 -	XML has been chosen to represent Insurer Response data because it is supported by all of the insurance partners for motor and home data transfer and is a common format between all established parties in the market.
