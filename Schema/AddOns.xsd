@@ -2,6 +2,7 @@
 <xs:schema xmlns="urn:PriceComparisonStandardsGroup/20160505/AddOns" 
            xmlns:p="urn:PriceComparisonStandardsGroup/20160505/AddOns" 
            xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+           xsi:schemaLocation="https://github.com/PriceComparisonStandardsGroup/AddOns/Schema/AddOns.xsd"
            targetNamespace="urn:PriceComparisonStandardsGroup/20160505/AddOns" 
            elementFormDefault="qualified" 
            id="AddOns">
