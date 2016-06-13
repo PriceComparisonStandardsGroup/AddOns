@@ -54,7 +54,7 @@ The tiers will be identified by the min and max price brackets for the total cos
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <p:AddOns xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-	  xmlns:p="urn:UniversalPriceComparisonServiceStandard/20160505/AddOns">
+	  xmlns:p="urn:PriceComparisonStandardsGroup/20160505/AddOns">
 
     <!--Scenario A: a bundled add-on, as a bundled item cannot be removed from the primary cover, as such does not have a price. Also we have permitted an optional link to a web page URL that contains further information about the add-on-->
 
@@ -81,7 +81,7 @@ The tiers will be identified by the min and max price brackets for the total cos
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <c:CreditAgreements xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-		    xmlns:c="urn:UniversalPriceComparisonServiceStandard/20160505/CreditAgreements">
+		    xmlns:c="urn:PriceComparisonStandardsGroup/20160505/CreditAgreements">
 
     <!--Scenario A: Standard plan for amounts for £0 to 999.99, percentage deposit with minimum of £100, fixed setup fee, no min Interest with 10 instalments-->
 
@@ -136,8 +136,8 @@ The tiers will be identified by the min and max price brackets for the total cos
 <!--This example is used to explain why we need a new standard and how the new standard can be added to an existing insurer response, 
 	the example already includes te insurers internal standard for 'ancillaries'-->
 <quote xmlns="http://www.exampleinsurer.co.uk" 
-		   xmlns:a="urn:UniversalPriceComparisonServiceStandard/20160505/AddOns" 
-		   xmlns:c="urn:UniversalPriceComparisonServiceStandard/20160505/CreditAgreements">
+		   xmlns:a="urn:PriceComparisonStandardsGroup/20160505/AddOns" 
+		   xmlns:c="urn:PriceComparisonStandardsGroup/20160505/CreditAgreements">
 	<quoteref>C6F63B-OOGOG</quoteref>
 	<price>
 		<policyterm>
