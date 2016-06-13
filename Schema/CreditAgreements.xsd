@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema id="CreditAgreements"
-           xmlns="urn:UniversalPriceComparisonServiceStandard/20160505/CreditAgreements"
-           xmlns:c="urn:UniversalPriceComparisonServiceStandard/20160505/CreditAgreements"
+           xmlns="urn:PriceComparisonStandardsGroup/20160505/CreditAgreements"
+           xmlns:c="urn:PriceComparisonStandardsGroup/20160505/CreditAgreements"
            xmlns:xs="http://www.w3.org/2001/XMLSchema"
-           targetNamespace="urn:UniversalPriceComparisonServiceStandard/20160505/CreditAgreements"
+           targetNamespace="urn:PriceComparisonStandardsGroup/20160505/CreditAgreements"
            elementFormDefault="qualified">
   <xs:element name="CreditAgreements" type="c:CreditAgreements">
     <xs:annotation>
