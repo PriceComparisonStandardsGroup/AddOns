@@ -131,7 +131,7 @@ The tiers will be identified by the min and max price brackets for the total cos
 </c:CreditAgreements>
 ```
 
-## Sample Response Elements - How to include the new elements in a pre-exiting insurer response 
+## Sample Response Elements - How to include the new elements in a pre-existing insurer response 
 ```xml
 <!--This example is used to explain why we need a new standard and how the new standard can be added to an existing insurer response, 
 	the example already includes te insurers internal standard for 'ancillaries'-->
