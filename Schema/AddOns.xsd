@@ -158,6 +158,11 @@
               <xs:documentation xml:lang="en">Insures Gadgets such as IWatches, Goggle glasses etc</xs:documentation>
             </xs:annotation>
           </xs:enumeration>
+          <xs:enumeration value="HomeEmergency">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Insures a wide range of household issues</xs:documentation>
+            </xs:annotation>
+          </xs:enumeration>
       </xs:restriction>
 	</xs:simpleType>
   <xs:simpleType name="amount">
