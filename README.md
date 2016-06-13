@@ -79,7 +79,7 @@ The tiers will be identified by the min and max price brackets for the total cos
 ## Sample Response Elements - CreditAgreements
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
-<c:CreditAgreements xsi:schemaLocation="urn:UniversalPriceComparisonServiceStandard/20160505/CreditAgreements CreditAgreements.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:c="urn:UniversalPriceComparisonServiceStandard/20160505/CreditAgreements">
+<c:CreditAgreements xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:c="urn:UniversalPriceComparisonServiceStandard/20160505/CreditAgreements">
 
     <!--Scenario A: Standard plan for amounts for £0 to 999.99, percentage deposit with minimum of £100, fixed setup fee, no min Interest with 10 instalments-->
 
