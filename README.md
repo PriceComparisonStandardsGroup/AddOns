@@ -130,3 +130,84 @@ The tiers will be identified by the min and max price brackets for the total cos
 	</c:Tier>
 </c:CreditAgreements>
 ```
+
+## Sample Response Elements - How to include the new elements in a pre-exiting insurer response 
+```xml
+<!--This example is used to explain why we need a new standard and how the new standard can be added to an existing insurer response, 
+	the example already includes te insurers internal standard for 'ancillaries'-->
+<quote xmlns="http://www.exampleinsurer.co.uk" 
+		   xmlns:a="urn:UniversalPriceComparisonServiceStandard/20160505/AddOns" 
+		   xmlns:c="urn:UniversalPriceComparisonServiceStandard/20160505/CreditAgreements">
+	<quoteref>C6F63B-OOGOG</quoteref>
+	<price>
+		<policyterm>
+			<term>12</term>
+			<premium>158.00</premium>
+		</policyterm>
+		<xs>
+			<vol>250</vol>
+			<comp>0</comp>
+			<total>250</total>
+			<fire>150</fire>
+		</xs>
+	</price>
+	<!--This is the orginal insurers standard for add-ons, the original format tell us that we have 3 possible add-ons-->
+	<ancillaries>
+		<!--This 'Hire Car' denotes an add-on but we don't know if it is financeable-->
+		<ancillary>
+			<name>Hire Car Plus</name>
+			<price>28.25</price>
+			<included>false</included>
+		</ancillary>
+		<!--This 'Legal Cover' denotes a free, or a bundled add-on, but we don't know which one-->
+		<ancillary>
+			<name>Legal Cover</name>
+			<price>0</price>
+			<included>true</included>
+		</ancillary>
+		<!--This 'Windscreen' denotes an add-on but we don't know if it is financeable-->
+		<ancillary>
+			<name>Windscreen</name>
+			<price>9.39</price>
+			<included>false</included>
+		</ancillary>
+	</ancillaries>
+	<!--This additive section denotes the 'ancillaries' in the AddOns format, we now know that Legal is free and not bundled, CourtesyCar can be selected 
+         and the value added to the total amount repayable, but Windscreen cover must be payed up front, The SubTypes allow customer selection of add-ons 
+         in a format that is already understood by the insurer-->
+	<a:AddOns>
+		<a:AddOn xsi:type="p:Free" Category="Legal" SubType="Legal"/>
+		<a:AddOn xsi:type="p:Incremental" Category="CourtesyCar" SubType="Hire Car Plus" Financeable="true">
+			<a:Price Frequency="Annually">28.25</a:Price>
+		</a:AddOn>
+		<a:AddOn xsi:type="p:Incremental" Category="Windscreen" SubType="Windscreen" Financeable="false">
+			<a:Price Frequency="Annually">9.39</a:Price>
+		</a:AddOn>
+	</a:AddOns>
+	<!--This additive section denotes the possible repayment plans on offer by the insurer, in this scenario two tiers have to be returned because the 
+        customer could, post quote, select an add-on that push the total amount repayable to the second tier in the collection which has higher interest 
+        rate and higher minimum deposit-->
+	<c:CreditAgreements>
+		<c:Tier Min="0" Plan="Standard" Max="175">
+			<c:Finance Term="12" Instalments="11"/>
+			<c:Deposit Min="5" AmountType="Percentage">10</c:Deposit>
+			<c:Interest Percentage="5" minimumAmount="0.00"/>
+			<c:Charges>
+				<c:Charge AddToLoan="true" Name="SetupFee">
+					<c:Amount AmountType="Fixed">10</c:Amount>
+				</c:Charge>
+			</c:Charges>
+		</c:Tier>
+		<c:Tier Min="175" Plan="Standard" Max="300">
+			<c:Finance Term="12" Instalments="11"/>
+			<c:Deposit Min="15" AmountType="Percentage">10</c:Deposit>
+			<c:Interest Percentage="10" minimumAmount="0.00"/>
+			<c:Charges>
+				<c:Charge AddToLoan="true" Name="SetupFee">
+					<c:Amount AmountType="Fixed">12</c:Amount>
+				</c:Charge>
+			</c:Charges>
+		</c:Tier>
+	</c:CreditAgreements>
+</quote>
+```
