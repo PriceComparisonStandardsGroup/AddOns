@@ -48,12 +48,12 @@
     </xs:sequence>
     <xs:attribute name="Min" type="c:nonNegativeDecimal" use="required">
       <xs:annotation>
-        <xs:documentation xml:lang="en">Denotes the Lower range boundry for the credit tier</xs:documentation>
+        <xs:documentation xml:lang="en">Denotes the lower range boundary (inclusive) for the credit tier</xs:documentation>
       </xs:annotation>
     </xs:attribute>
     <xs:attribute name="Max" type="c:nonNegativeDecimal" use="required">
       <xs:annotation>
-        <xs:documentation xml:lang="en">Denotes the Lower range for the credit tier</xs:documentation>
+        <xs:documentation xml:lang="en">Denotes the upper range boundary (exclusive) for the credit tier</xs:documentation>
       </xs:annotation>
     </xs:attribute>
     <xs:attribute name="Plan" type="c:repaymentPlan" use="required">
