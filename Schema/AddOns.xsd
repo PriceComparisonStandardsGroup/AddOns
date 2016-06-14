@@ -127,7 +127,7 @@
 			<xs:documentation xml:lang="en">This is the standard code list of product/service categories for Add-ons. Items can be added to this list, but once published, items cannot be changed in their definition or removed. Any breaking changes will require a new schema version.</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:token">
-			<xs:enumeration value="LegalExpenses">
+			<xs:enumeration value="Legal">
 				<xs:annotation>
 					<xs:documentation xml:lang="en">Covers the cost of any legal expenses incurred while settling an insurance claim.</xs:documentation>
 				</xs:annotation>
@@ -137,14 +137,9 @@
 					<xs:documentation xml:lang="en">Roadside Assistance and Recovery Cover.</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
-			<xs:enumeration value="ProtectedNoClaimsBonus">
+			<xs:enumeration value="Keys">
 				<xs:annotation>
-					<xs:documentation xml:lang="en">Savegaurds a customers no claims bonus in the event of a claim.</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="CourtesyCar">
-				<xs:annotation>
-					<xs:documentation xml:lang="en">Temp replacement vehicle if your car if your vehicle is off the road.</xs:documentation>
+					<xs:documentation xml:lang="en">Cover for keys have ever been lost, stolen or damaged</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="Gadget">
@@ -152,45 +147,14 @@
 					<xs:documentation xml:lang="en">Insures Gadgets such as IWatches, Google glasses etc</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
-			<xs:enumeration value="HomeEmergency">
+		        <xs:enumeration value="PersonalAccident">
 				<xs:annotation>
-					<xs:documentation xml:lang="en">Insures a wide range of household issues</xs:documentation>
+					<xs:documentation xml:lang="en">Cover for Accident Permanent Injury, Death etc</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
-			<!--WARDP: Will drop these chaps in once CTM business foke update https://github.com/PriceComparisonStandardsGroup/AddOns/blob/master/AddOnCategories.md
-			<xs:enumeration value="Keys">
+			<xs:enumeration value="PNCB">
 				<xs:annotation>
-					<xs:documentation xml:lang="en">Cover for keys have ever been lost, stolen or damaged</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="Bicycle">
-				<xs:annotation>
-					<xs:documentation xml:lang="en">Cover stolen bikes</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="PersonalPossessions">
-				<xs:annotation>
-					<xs:documentation xml:lang="en">TBA</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="SpecifiedItemsCover">
-				<xs:annotation>
-					<xs:documentation xml:lang="en">TBA</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="Boiler">
-				<xs:annotation>
-					<xs:documentation xml:lang="en">Cover for central heating boiler</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="Garden">
-				<xs:annotation>
-					<xs:documentation xml:lang="en">Cover theft of plants from garden</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="Student">
-				<xs:annotation>
-					<xs:documentation xml:lang="en">Cover for a family member while attending college, university or boarding school</xs:documentation>
+					<xs:documentation xml:lang="en">Savegaurds a customers no claims bonus in the event of a claim.</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="ExcessProtection">
@@ -198,31 +162,46 @@
 					<xs:documentation xml:lang="en">Allows you to claim back your excess</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
-			<xs:enumeration value="Windscreen">
+			<xs:enumeration value="HelmetAndLeathers">
 				<xs:annotation>
-					<xs:documentation xml:lang="en">Cover for windscreen damage</xs:documentation>
+					<xs:documentation xml:lang="en">Cover for helmet and leathers</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
-			<xs:enumeration value="PersonalEffects">
+			<xs:enumeration value="PersonalPossessions">
 				<xs:annotation>
-					<xs:documentation xml:lang="en">TBA</xs:documentation>
+					<xs:documentation xml:lang="en">Cover for Personal Possessions away from home</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
-			<xs:enumeration value="PersonalAccident">
+			<xs:enumeration value="CourtesyCar">
 				<xs:annotation>
-					<xs:documentation xml:lang="en">Cover for Accident Permanent Injury, Death etc</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="GreenCard">
-				<xs:annotation>
-					<xs:documentation xml:lang="en">Internationally-recognised document that acts as proof of insurance in Europe</xs:documentation>
+					<xs:documentation xml:lang="en">Temp replacement vehicle if your car if your vehicle is off the road.</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="Misfuelling">
 				<xs:annotation>
 					<xs:documentation xml:lang="en">Covers the costs if you’ve put the wrong fuel in your vehicle</xs:documentation>
 				</xs:annotation>
-			</xs:enumeration>-->
+			</xs:enumeration>
+			<xs:enumeration value="Windscreen">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">Cover for windscreen damage</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Garden">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">Cover theft of plants from garden</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Bicycle">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">Cover stolen bikes</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="HomeEmergency">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">Insures a wide range of household issues</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="amount">
