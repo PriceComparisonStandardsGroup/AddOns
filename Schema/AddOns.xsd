@@ -78,7 +78,7 @@
 			<xs:extension base="p:amount">
 				<xs:attribute name="Frequency" type="p:frequency" use="required">
 					<xs:annotation>
-						<xs:documentation>Denotes a Payment Frequency (e.g. Annually, Semi Annually, Quarterly, Monthly, Weekly, Daily, Continuous), avoided the name type to avoid auot generated proxy class complications</xs:documentation>
+						<xs:documentation>Denotes a Payment Frequency (e.g. Annually, Semi Annually, Quarterly, Monthly, Weekly, Daily, Continuous), avoided the name type to avoid auto generated proxy class complications</xs:documentation>
 					</xs:annotation>
 				</xs:attribute>
 			</xs:extension>
