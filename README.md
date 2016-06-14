@@ -10,7 +10,7 @@
 [AddOn Categories](AddOnCategories.md)
 
 ## Finance Plan Definitions
-[Finance Plan](Finance/FinancePlan.md)
+[Finance Calculation](Finance/FinanceCalculation.md)
 [Standard Plan](Finance/StandardPlan.md)
 [Level Plan](Finance/LevelPlan.md)
 
