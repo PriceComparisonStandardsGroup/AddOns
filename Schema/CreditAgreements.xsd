@@ -1,198 +1,203 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xs:schema id="CreditAgreements"
-           xmlns="urn:PriceComparisonStandardsGroup/20160505/CreditAgreements"
-           xmlns:c="urn:PriceComparisonStandardsGroup/20160505/CreditAgreements"
-           xmlns:xs="http://www.w3.org/2001/XMLSchema"
-           targetNamespace="urn:PriceComparisonStandardsGroup/20160505/CreditAgreements"
-           elementFormDefault="qualified">
-  <xs:element name="CreditAgreements" type="c:CreditAgreements">
-    <xs:annotation>
-      <xs:documentation>Denotes a list of possible credit agreements</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:complexType name="CreditAgreements">
-    <xs:sequence>
-      <xs:element name="Tier" type="c:Tier" minOccurs="1" maxOccurs="unbounded">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Denotes a Credit Agreements Tier to be selected based on the total cost of the pinciple insurance premuim PLUS that of costs of the selected financeable add-on</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-    </xs:sequence>  
-  </xs:complexType>
-  <xs:complexType name="Tier">
-    <xs:sequence>
-      <xs:element name="Finance" type="c:Finance" minOccurs="1" maxOccurs="1">
-        <xs:annotation>
-          <xs:documentation>denotes the terms and conditions of the finance agreement</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element name="Deposit" type="c:Deposit" minOccurs="0" maxOccurs="1">
-        <xs:annotation>
-          <xs:documentation>Deposit amount may be denoted for standard plans</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element name="Interest" type="c:Interest" minOccurs="0" maxOccurs="1">
-        <xs:annotation>
-          <xs:documentation>denotes the inrest amount</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element name="Charges" type="c:Charges" minOccurs="0" maxOccurs="1">
-        <xs:annotation>
-          <xs:documentation>Denotes any additional charges used to set up the credit agreement</xs:documentation>
-        </xs:annotation>
-        <xs:unique name="noDuplicateCharges">
-          <xs:selector xpath="c:Charge"/>
-          <xs:field xpath="@Name"/>
-        </xs:unique>
-      </xs:element>
-    </xs:sequence>
-    <xs:attribute name="Min" type="c:nonNegativeDecimal" use="required">
-      <xs:annotation>
-        <xs:documentation xml:lang="en">Denotes the lower range boundary (inclusive) for the credit tier</xs:documentation>
-      </xs:annotation>
-    </xs:attribute>
-    <xs:attribute name="Max" type="c:nonNegativeDecimal" use="required">
-      <xs:annotation>
-        <xs:documentation xml:lang="en">Denotes the upper range boundary (exclusive) for the credit tier</xs:documentation>
-      </xs:annotation>
-    </xs:attribute>
-    <xs:attribute name="Plan" type="c:repaymentPlan" use="required">
-      <xs:annotation>
-        <xs:documentation xml:lang="en">Denotes the Lower range for the credit tier</xs:documentation>
-      </xs:annotation>
-    </xs:attribute>
-  </xs:complexType>
-  <xs:complexType name="Interest">
-    <xs:attribute name="Percentage" type="c:nonNegativeDecimal" use="required">
-      <xs:annotation>
-        <xs:documentation>Denotes the percentage use to calculate the depoist amount</xs:documentation>
-      </xs:annotation>
-    </xs:attribute>
-    <xs:attribute name="minimumAmount" type="c:nonNegativeDecimal" use="optional">
-      <xs:annotation>
-        <xs:documentation>Denotes the min fixed amount for Interest</xs:documentation>
-      </xs:annotation>
-    </xs:attribute>
-  </xs:complexType>
-  <xs:complexType name="Finance">
-    <xs:attribute name="Cap" type="c:nonNegativeDecimal" use="optional">
-      <xs:annotation>
-        <xs:documentation>Denotes the maxium amount that a lender will allow, if the amount owned is greater than the cap then the deposit is calculated by negating the cap from the amount owed</xs:documentation>
-      </xs:annotation>
-    </xs:attribute>
-    <xs:attribute name="Instalments" type="xs:positiveInteger" use="required">
-      <xs:annotation>
-        <xs:documentation>Denotes the term of the loan</xs:documentation>
-      </xs:annotation>
-    </xs:attribute>
-    <xs:attribute name="Term" type="c:term" use="required">
-      <xs:annotation>
-        <xs:documentation>Denotes the term of the loan</xs:documentation>
-      </xs:annotation>
-    </xs:attribute>
-  </xs:complexType>
-  <xs:complexType name="Deposit">
-    <xs:complexContent>
-      <xs:extension base="Amount">
-        <xs:attribute name="Min" use="optional" type="c:nonNegativeDecimal">
-          <xs:annotation>
-          <xs:documentation>Denotes the min deposit amount</xs:documentation>
-        </xs:annotation>
-        </xs:attribute>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="Amount">
-    <xs:simpleContent>
-      <xs:extension base="c:nonNegativeDecimal">
-        <xs:attribute name="AmountType" type="c:amountType" use="required">
-          <xs:annotation>
-            <xs:documentation>Denotes how this amount should be applied (e.g. percentage amount, fixed amount)</xs:documentation>
-          </xs:annotation>
-        </xs:attribute>
-      </xs:extension>
-    </xs:simpleContent>
-  </xs:complexType>
-  <xs:complexType name="Charges">
-    <xs:sequence>
-      <xs:element name="Charge" type="c:Charge" minOccurs="1" maxOccurs="unbounded">
-        <xs:annotation>
-          <xs:documentation>Denote any charges with the credit agreement</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="Charge">
-    <xs:sequence>
-      <xs:element name="Amount" type="c:Amount">
-        <xs:annotation>
-          <xs:documentation>Denotes the amount of the charge</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-    </xs:sequence>
-    <xs:attribute name="Name" type="c:chargeType" use="required">
-      <xs:annotation>
-        <xs:documentation>Denotes the reason for the charge</xs:documentation>
-      </xs:annotation>
-    </xs:attribute>
-    <xs:attribute name="AddToLoan" type="xs:boolean" use="required">
-      <xs:annotation>
-        <xs:documentation>Denotes if the charge can be added to the load or must be payed in full with the deposit</xs:documentation>
-      </xs:annotation>
-    </xs:attribute>
-  </xs:complexType>
-  <xs:simpleType name="chargeType">
-    <xs:restriction base="xs:token">
-      <xs:enumeration value="SetupFee">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Denotes a fee a credit provider may apply to set up a credit agreement</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:simpleType name="term">
-    <xs:annotation>
-      <xs:documentation xml:lang="en">loan term in months</xs:documentation>
-    </xs:annotation>
-    <xs:restriction base="xs:int">
-      <xs:minInclusive value="1"/>
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:simpleType name="nonNegativeDecimal">
-    <xs:annotation>
-      <xs:documentation xml:lang="en">Represents a non negative decimal</xs:documentation>
-    </xs:annotation>
-    <xs:restriction base="xs:decimal">
-      <xs:fractionDigits value="2"/>
-      <xs:minInclusive value="0.00"/>
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:simpleType name="repaymentPlan">
-    <xs:restriction base="xs:token">
-      <xs:enumeration value="Standard">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Denotes the typical repayment plan wherby the deposit amount is caculated before remaining instalment amount</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Level">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Denotes a level repayment plan wherby the deposit amount is caculated to match remaining instalment amount, common in Northen Ireland</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:simpleType name="amountType">
-    <xs:restriction base="xs:token">
-      <xs:enumeration value="Percentage">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Denotes the an amount must be considered as a pecentage value to the total amount borrowed</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="Fixed">
-        <xs:annotation>
-          <xs:documentation xml:lang="en">Denotes that an amount must be considered as a fixed cash value</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-    </xs:restriction>
-  </xs:simpleType>
+<xs:schema id="CreditAgreements" xmlns="urn:PriceComparisonStandardsGroup/20160505/CreditAgreements" xmlns:c="urn:PriceComparisonStandardsGroup/20160505/CreditAgreements" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:PriceComparisonStandardsGroup/20160505/CreditAgreements" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" elementFormDefault="qualified">
+	<xs:element name="CreditAgreements" type="c:CreditAgreements">
+		<xs:annotation>
+			<xs:documentation>Denotes a list of possible credit agreements</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="CreditAgreements">
+		<xs:sequence>
+			<xs:element name="Tier" type="c:Tier" minOccurs="1" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">Denotes a Credit Agreements Tier to be selected based on the total cost of the pinciple insurance premuim PLUS that of costs of the selected financeable add-on</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Tier">
+		<xs:sequence>
+			<xs:element name="Finance" type="c:Finance" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>denotes the terms and conditions of the finance agreement</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Deposit" type="c:Deposit" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Deposit amount may be denoted for standard plans</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Interest" type="c:Interest" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>denotes the inrest amount</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Charges" type="c:Charges" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Denotes any additional charges used to set up the credit agreement</xs:documentation>
+				</xs:annotation>
+				<xs:unique name="noDuplicateCharges">
+					<xs:selector xpath="c:Charge"/>
+					<xs:field xpath="@xsi:type"/>
+				</xs:unique>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="Min" type="c:nonNegativeDecimal" use="required">
+			<xs:annotation>
+				<xs:documentation xml:lang="en">Denotes the lower range boundary (inclusive) for the credit tier</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="Max" type="c:nonNegativeDecimal" use="required">
+			<xs:annotation>
+				<xs:documentation xml:lang="en">Denotes the upper range boundary (exclusive) for the credit tier</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="Plan" type="c:repaymentPlan" use="required">
+			<xs:annotation>
+				<xs:documentation xml:lang="en">Denotes the Lower range for the credit tier</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="Interest">
+		<xs:attribute name="Percentage" type="c:nonNegativeDecimal" use="required">
+			<xs:annotation>
+				<xs:documentation>Denotes the percentage use to calculate the depoist amount</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="minimumAmount" type="c:nonNegativeDecimal" use="optional">
+			<xs:annotation>
+				<xs:documentation>Denotes the min fixed amount for Interest</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="Finance">
+		<xs:attribute name="Cap" type="c:nonNegativeDecimal" use="optional">
+			<xs:annotation>
+				<xs:documentation>Denotes the maxium amount that a lender will allow, if the amount owned is greater than the cap then the deposit is calculated by negating the cap from the amount owed</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="Instalments" type="xs:positiveInteger" use="required">
+			<xs:annotation>
+				<xs:documentation>Denotes the term of the loan</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="Term" type="c:term" use="required">
+			<xs:annotation>
+				<xs:documentation>Denotes the term of the loan</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="Deposit">
+		<xs:complexContent>
+			<xs:extension base="Amount">
+				<xs:attribute name="Min" use="optional" type="c:nonNegativeDecimal">
+					<xs:annotation>
+						<xs:documentation>Denotes the min deposit amount</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Amount">
+		<xs:simpleContent>
+			<xs:extension base="c:nonNegativeDecimal">
+				<xs:attribute name="AmountType" type="c:amountType" use="required">
+					<xs:annotation>
+						<xs:documentation>Denotes how this amount should be applied (e.g. percentage amount, fixed amount)</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="Charges">
+		<xs:sequence>
+			<xs:element name="Charge" type="c:Charge" minOccurs="1" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Denote any charges with the credit agreement</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="AppliedToDeposit">
+		<xs:annotation>
+			<xs:documentation>Charge that is applied to the deposit</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="c:Charge"/>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="AppliedToLoan">
+		<xs:annotation>
+			<xs:documentation>Charge that is applied to the Loan</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="c:Charge"/>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="AppliedToPremium">
+		<xs:annotation>
+			<xs:documentation>Charge that is applied to the Premium</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="c:Charge"/>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Charge" abstract="true">
+		<xs:sequence>
+			<xs:element name="Amount" type="c:Amount">
+				<xs:annotation>
+					<xs:documentation>Denotes the amount of the charge</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="Name" type="xs:token" use="optional">
+			<xs:annotation>
+				<xs:documentation>Denotes the reason for the charge</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:simpleType name="term">
+		<xs:annotation>
+			<xs:documentation xml:lang="en">loan term in months</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:int">
+			<xs:minInclusive value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="nonNegativeDecimal">
+		<xs:annotation>
+			<xs:documentation xml:lang="en">Represents a non negative decimal</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:decimal">
+			<xs:fractionDigits value="2"/>
+			<xs:minInclusive value="0.00"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="repaymentPlan">
+		<xs:restriction base="xs:token">
+			<xs:enumeration value="Standard">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">Denotes the typical repayment plan wherby the deposit amount is caculated before remaining instalment amount</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Level">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">Denotes a level repayment plan wherby the deposit amount is caculated to match remaining instalment amount, common in Northen Ireland</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="amountType">
+		<xs:restriction base="xs:token">
+			<xs:enumeration value="Percentage">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">Denotes the an amount must be considered as a pecentage value to the total amount borrowed</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Fixed">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">Denotes that an amount must be considered as a fixed cash value</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
 </xs:schema>
