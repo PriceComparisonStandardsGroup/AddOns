@@ -202,6 +202,41 @@
 					<xs:documentation xml:lang="en">Insures a wide range of household issues</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
+			<xs:enumeration value="DrivingAbroad">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">Cover to drive abroad</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="SoundEquipment">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">Cover theft of sound equipment from car or van</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Tools">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">Cover theft of tools from van</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="AlternativeAccommodation">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">Provide alternative accommodation if unable to remain in house</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="NewForOld">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">Provides replacement with a like-for-like new product for damaged or stolen items</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="ReplacementLocks">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">Provides replacement locks if the keys are lost or stolen</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="FreezerCover">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">Covers the contents of the freezer in the event of power loss</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="amount">
