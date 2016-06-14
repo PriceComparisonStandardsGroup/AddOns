@@ -9,7 +9,7 @@
 		<xs:sequence>
 			<xs:element name="Tier" type="c:Tier" minOccurs="1" maxOccurs="unbounded">
 				<xs:annotation>
-					<xs:documentation xml:lang="en">Denotes a Credit Agreements Tier to be selected based on the total cost of the pinciple insurance premuim PLUS that of costs of the selected financeable add-on</xs:documentation>
+					<xs:documentation xml:lang="en">Denotes a Credit Agreements Tier to be selected based on the total cost of the principle insurance premium PLUS that of costs of the selected financeable add-on</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
@@ -28,7 +28,7 @@
 			</xs:element>
 			<xs:element name="Interest" type="c:Interest" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
-					<xs:documentation>denotes the inrest amount</xs:documentation>
+					<xs:documentation>denotes the interest amount</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="Charges" type="c:Charges" minOccurs="0" maxOccurs="1">
@@ -60,7 +60,7 @@
 	<xs:complexType name="Interest">
 		<xs:attribute name="Percentage" type="c:nonNegativeDecimal" use="required">
 			<xs:annotation>
-				<xs:documentation>Denotes the percentage use to calculate the depoist amount</xs:documentation>
+				<xs:documentation>Denotes the percentage use to calculate the deposit amount</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
 		<xs:attribute name="minimumAmount" type="c:nonNegativeDecimal" use="optional">
@@ -72,7 +72,7 @@
 	<xs:complexType name="Finance">
 		<xs:attribute name="Cap" type="c:nonNegativeDecimal" use="optional">
 			<xs:annotation>
-				<xs:documentation>Denotes the maxium amount that a lender will allow, if the amount owned is greater than the cap then the deposit is calculated by negating the cap from the amount owed</xs:documentation>
+				<xs:documentation>Denotes the maximum amount that a lender will allow, if the amount owned is greater than the cap then the deposit is calculated by negating the cap from the amount owed</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
 		<xs:attribute name="Instalments" type="xs:positiveInteger" use="required">
@@ -176,12 +176,12 @@
 		<xs:restriction base="xs:token">
 			<xs:enumeration value="Standard">
 				<xs:annotation>
-					<xs:documentation xml:lang="en">Denotes the typical repayment plan wherby the deposit amount is caculated before remaining instalment amount</xs:documentation>
+					<xs:documentation xml:lang="en">Denotes the typical repayment plan wherby the deposit amount is calculated before remaining instalment amount</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="Level">
 				<xs:annotation>
-					<xs:documentation xml:lang="en">Denotes a level repayment plan wherby the deposit amount is caculated to match remaining instalment amount, common in Northen Ireland</xs:documentation>
+					<xs:documentation xml:lang="en">Denotes a level repayment plan wherby the deposit amount is calculated to match remaining instalment amount, common in Northern Ireland</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 		</xs:restriction>
@@ -190,7 +190,7 @@
 		<xs:restriction base="xs:token">
 			<xs:enumeration value="Percentage">
 				<xs:annotation>
-					<xs:documentation xml:lang="en">Denotes the an amount must be considered as a pecentage value to the total amount borrowed</xs:documentation>
+					<xs:documentation xml:lang="en">Denotes the an amount must be considered as a percentage value to the total amount borrowed</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="Fixed">
