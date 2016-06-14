@@ -20,21 +20,21 @@ Sample Http Requests (Click-through Requests)
 For example, say we have the following product/services list (note that the URL is an example and does not indicate a standard):
 
 - <b>CourtesyCar</b> (which is a free add-on, it subtype has been defined a ‘basic’ by insurer)
-- <b>ProtectedNoClaimsBonus</b>
+- <b>PNCB</b>
 - <b>Breakdown</b> (with a partner subtype of bdownplus they use to define their top level)
-- <b>LegalExpenses</b>
+- <b>Legal</b>
 
 
 In this scenario the customer only wants Breakdown Cover, but allowed the free courtesy car cover to remain selected.
 ```
 POST https://www.insurealpha.com/car/buyonline.asp HTTP/1.1
 Host: w3schools.com
-quoteref=19f313b4&BreakdownCover=bdownplus&CourtesyCar=basic&Deposit=12.55&Installments=9&InstallmentAmount=12.55&TotalRepayable=125.50&Total=120 
+quoteref=19f313b4&Breakdown=bdownplus&CourtesyCar=basic&Deposit=12.55&Installments=9&InstallmentAmount=12.55&TotalRepayable=125.50&Total=120 
 ```
 
 In this scenario the customer only wants Breakdown Cover, but the PCW has explicitly removed Courtesy Car Cover 
 ```
 POST https://www.insurebeta.com/motor/homepage.php HTTP/1.1
 Host: w3schools.com
-quoteref=19f313b4&BreakdownCover=bdownplus&Deposit=12.55&Installments=9&InstallmentAmount=12.55&TotalRepayable=125.50&Total=120  
+quoteref=19f313b4&Breakdown=bdownplus&Deposit=12.55&Installments=9&InstallmentAmount=12.55&TotalRepayable=125.50&Total=120  
 ```
