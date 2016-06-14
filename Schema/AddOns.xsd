@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns="urn:PriceComparisonStandardsGroup/20160505/AddOns" xmlns:p="urn:PriceComparisonStandardsGroup/20160505/AddOns" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:PriceComparisonStandardsGroup/20160505/AddOns" elementFormDefault="qualified" id="AddOns">
 	<xs:element name="AddOns" type="p:AddOns">
 		<xs:annotation>
@@ -9,7 +9,7 @@
 		<xs:sequence>
 			<xs:element name="AddOn" type="p:AddOn" maxOccurs="unbounded">
 				<xs:annotation>
-					<xs:documentation xml:lang="en">Products/Services that can be that can be displayed with the primary product quotation, these Products/Services may be addon-ons that incure additionalcosts or enhancements features for no additional cost</xs:documentation>
+					<xs:documentation xml:lang="en">Products/Services that can be that can be displayed with the primary product quotation, these Products/Services may be addon-ons that incur additional costs or enhancements features for no additional cost</xs:documentation>
 				</xs:annotation>
 				<xs:unique name="noDuplicatePriceFrequencyTypesPerAddon">
 					<xs:selector xpath="p:Price"/>
@@ -69,7 +69,7 @@
 		</xs:attribute>
 		<xs:attribute name="SubType" type="xs:token" use="required">
 			<xs:annotation>
-				<xs:documentation xml:lang="en">Denotes the partners specfic sub type offering for the addon (i.e. not all Breakdown covers are equal) and will be used to specify a flag in the query string</xs:documentation>
+				<xs:documentation xml:lang="en">Denotes the partners specific sub type offering for the addon (i.e. not all Breakdown covers are equal) and will be used to specify a flag in the query string</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
 	</xs:complexType>
@@ -206,7 +206,7 @@
 	</xs:simpleType>
 	<xs:simpleType name="amount">
 		<xs:annotation>
-			<xs:documentation xml:lang="en">Represents a non ngeative, non zero money value for a decimal currency system</xs:documentation>
+			<xs:documentation xml:lang="en">Represents a non negative, non zero money value for a decimal currency system</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:decimal">
 			<xs:fractionDigits value="2"/>
