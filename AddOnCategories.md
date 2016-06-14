@@ -2,19 +2,20 @@ For the scheam codes for these add-on please see [AddOns.xsd](Schema/AddOns.xsd)
 
 This is under review and will be finalised 14/06/2016
 
-Home Insurance | Motor Insurance | Travel Insurance
---- | --- | ---
-Legal cover | Legal cover | Gadget cover
-Home emergency | Courtesy car |
-Key cover | Breakdown |
-Bicycle cover | Windscreen cover |
-Personal Possessions cover | Personal accident |
-Specified items cover | Personal effects cover |
-Boiler cover | EU cover/Green card |
-PNCB (Included for flexibility) | PNCB (Included for flexibility) |
-Gadget cover | Key cover |
-Breakdown cover | Loss of keys |
-Garden cover | Theft of keys |
-Student cover | Gadget cover |
-Excess protection | Misfuelling cover | 
-    |  Excess protection |
+|| Home Insurance | Car Insurance | Van Insurance | Bike Insurance | Travel Insurance
+|:--- |:---:|:---:|:---:|:---:|:---:|
+Legal cover        | x | x | x | x |   |
+Breakdown          | x | x | x | x |   |
+Key Cover          | x | x | x | x |   |
+Gadget Cover       | x |   |   |   | x |
+Personal accident  |   | x | x | x |   |
+PNCB               |   | x | x | x |   |
+Excess protection  |   | x | x | x |   |
+Helmet & Leathers  |   |   |   | x |   |
+Personal Possesions| x | x | x | x |   |
+Courtesy Car       |   | x | x | x |   |
+Missfueling        |   | x | x | x |   |
+Windscreen         | x | x | x | x |   |
+Garden             | x | x | x | x |   |
+Bicycle            | x | x | x | x |   |
+Home Emergency     | x | x | x | x |   |
