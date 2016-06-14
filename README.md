@@ -90,7 +90,7 @@ The tiers will be identified by the min and max price brackets for the total cos
         <c:Deposit Min="100" AmountType="Percentage">10</c:Deposit>
         <c:Interest Percentage="3.79" minimumAmount="0.00"/>
         <c:Charges>
-            <c:Charge AddToLoan="true" Name="SetupFee">
+            <c:Charge xsi:type="c:AppliedToLoan" Name="Setup Fee">
                 <c:Amount AmountType="Fixed">10.99</c:Amount>
             </c:Charge>
         </c:Charges>
@@ -103,7 +103,7 @@ The tiers will be identified by the min and max price brackets for the total cos
 		<c:Deposit AmountType="Fixed">500.50</c:Deposit>
 		<c:Interest Percentage="3.79" minimumAmount="0.00"/>
 		<c:Charges>
-			<c:Charge AddToLoan="true" Name="SetupFee">
+			<c:Charge xsi:type="c:AppliedToLoan" Name="Setup Fee">
 				<c:Amount AmountType="Fixed">10.99</c:Amount>
 			</c:Charge>
 		</c:Charges>
@@ -123,7 +123,7 @@ The tiers will be identified by the min and max price brackets for the total cos
 		<c:Finance Term="12" Instalments="12" />
 		<c:Interest Percentage="15" minimumAmount="50.99"/>
 		<c:Charges>
-			<c:Charge AddToLoan="false" Name="SetupFee">
+			<c:Charge xsi:type="c:AppliedToLoan" Name="Setup Fee">
 				<c:Amount AmountType="Percentage">1.5</c:Amount>
 			</c:Charge>
 		</c:Charges>
@@ -193,7 +193,7 @@ The tiers will be identified by the min and max price brackets for the total cos
 			<c:Deposit Min="5" AmountType="Percentage">10</c:Deposit>
 			<c:Interest Percentage="5" minimumAmount="0.00"/>
 			<c:Charges>
-				<c:Charge AddToLoan="true" Name="SetupFee">
+				<c:Charge xsi:type="c:AppliedToLoan" Name="Setup Fee">
 					<c:Amount AmountType="Fixed">10</c:Amount>
 				</c:Charge>
 			</c:Charges>
@@ -203,7 +203,7 @@ The tiers will be identified by the min and max price brackets for the total cos
 			<c:Deposit Min="15" AmountType="Percentage">10</c:Deposit>
 			<c:Interest Percentage="10" minimumAmount="0.00"/>
 			<c:Charges>
-				<c:Charge AddToLoan="true" Name="SetupFee">
+				<c:Charge xsi:type="c:AppliedToLoan" Name="Setup Fee">
 					<c:Amount AmountType="Fixed">12</c:Amount>
 				</c:Charge>
 			</c:Charges>
