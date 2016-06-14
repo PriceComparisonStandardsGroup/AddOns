@@ -58,11 +58,11 @@ The tiers will be identified by the min and max price brackets for the total cos
 
     <!--Scenario A: a bundled add-on, as a bundled item cannot be removed from the primary cover, as such does not have a price. Also we have permitted an optional link to a web page URL that contains further information about the add-on-->
 
-	<p:AddOn xsi:type="p:Bundled" Category="LegalExpenses" SubType="lg22568"/>
+	<p:AddOn xsi:type="p:Bundled" Category="Legal" SubType="lg22568"/>
 
     <!--Scenario B: a free add-on is has no price, but it can be removed by customer selection-->
 
-	<p:AddOn xsi:type="p:Free" Category="ProtectedNoClaimsBonus" SubType="pncB" />
+	<p:AddOn xsi:type="p:Free" Category="PNCB" SubType="pncB" />
 
 	 <!--Scenario C: an add-on that incurs extra cost, in this case the add-on on can be added to the credit agreement so will result in tier selection-->
 
