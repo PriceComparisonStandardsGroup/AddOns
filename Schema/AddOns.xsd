@@ -107,17 +107,17 @@
 		<xs:restriction base="xs:token">
 			<xs:enumeration value="Bundled">
 				<xs:annotation>
-					<xs:documentation>Have queried this with Adam from Compare The Market</xs:documentation>
+					<xs:documentation>denotes the addon is included in the package price</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="Free">
 				<xs:annotation>
-					<xs:documentation>Have queried this with Adam from Compare The Market</xs:documentation>
+					<xs:documentation>denotes addon is optional at no additional cost</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="Incremental">
 				<xs:annotation>
-					<xs:documentation>Have queried this with Adam from Compare The Market</xs:documentation>
+					<xs:documentation>denotes addon will incur additional charges</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 		</xs:restriction>
