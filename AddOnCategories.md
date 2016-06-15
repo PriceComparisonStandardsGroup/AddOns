@@ -1,6 +1,4 @@
-For the scheam codes for these add-on please see [AddOns.xsd](Schema/AddOns.xsd)
-
-This is under review and will be finalised 14/06/2016
+For the schema codes for these add-ons please see [AddOns.xsd](Schema/AddOns.xsd)
 
 || Home Insurance | Car Insurance | Van Insurance | Bike Insurance | Travel Insurance
 |:--- |:---:|:---:|:---:|:---:|:---:|
