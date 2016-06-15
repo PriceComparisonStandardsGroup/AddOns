@@ -174,7 +174,7 @@ public class Program
 			}
 
 
-			decimal interestAmount = loanAmount * NetInterestRate;
+            decimal interestAmount = Math.Max(MinInterestAmount,loanAmount * NetInterestRate);
 			//Console.Write("interest amount = " + interestAmount);
 			
 			decimal installmentAmount = (loanAmount + interestAmount)/(NoOfInstallments + 1);
