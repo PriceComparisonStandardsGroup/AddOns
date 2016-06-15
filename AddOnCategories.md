@@ -9,7 +9,7 @@ Breakdown                | x | x | x | x |   |
 Key Cover                | x | x | x | x |   |
 Personal accident        |   | x | x | x |   |
 PNCB                     | x | x | x | x |   |
-Courtesy Car/Van         | x | x | x | x |   |
+Courtesy Car/Van         |   | x | x | x |   |
 Missfueling              |   | x | x | x |   |
 Windscreen               |   | x | x | x |   |
 Driving Abroad           |   | x | x | x |   |
