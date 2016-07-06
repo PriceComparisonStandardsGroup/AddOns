@@ -17,8 +17,8 @@ public class Program
 	{
 		public decimal SinglePaymentTotal;
 		public decimal FinanceDeposit;
-		public int FinanceNumberOfInstallments;
-		public decimal FinanceInstallmentAmount;
+		public int FinanceNumberOfInstalments;
+		public decimal FinanceInstalmentAmount;
 		public decimal FinanceTotalPayable;
 	}
 	
@@ -45,7 +45,7 @@ public class Program
 		public decimal DepositRate;				// The deposit as percentage of the sum of BasePremium, add-ons and setup fees
 		public decimal? MaxloanAmount;
   		public decimal MinLoanAmount;
-		public int NoOfInstallments;
+		public int NoOfInstalments;
   		public decimal NetInterestRate;
 		public decimal MinInterestAmount;
 		public Charges FinanceCharges;
@@ -102,7 +102,7 @@ public class Program
 			}
 			
 			
-			if (NoOfInstallments == 0 || loanAmount < MinLoanAmount || loanAmount > MaxloanAmount)
+			if (NoOfInstalments == 0 || loanAmount < MinLoanAmount || loanAmount > MaxloanAmount)
 			{
 				return new CalculationResult
 				{
@@ -115,16 +115,16 @@ public class Program
 			
 			Console.Write("interest amount = " + interestAmount);
 			
-			decimal installmentAmount = (loanAmount + interestAmount)/NoOfInstallments;
+			decimal instalmentAmount = (loanAmount + interestAmount)/NoOfInstalments;
 			
 			
 			var result = new CalculationResult
 			{
 				SinglePaymentTotal = singlePaymentTotal,
 				FinanceDeposit = deposit,
-				FinanceNumberOfInstallments = NoOfInstallments,
-				FinanceInstallmentAmount = installmentAmount,
-				FinanceTotalPayable = deposit + (NoOfInstallments * installmentAmount)				
+				FinanceNumberOfInstalments = NoOfInstalments,
+				FinanceInstalmentAmount = instalmentAmount,
+				FinanceTotalPayable = deposit + (NoOfInstalments * instalmentAmount)				
 			};
 			
 			return result;
@@ -165,7 +165,7 @@ public class Program
 			
 			
 			
-			if (NoOfInstallments == 0 || loanAmount < MinLoanAmount || loanAmount > MaxloanAmount)
+			if (NoOfInstalments == 0 || loanAmount < MinLoanAmount || loanAmount > MaxloanAmount)
 			{
 				return new CalculationResult
 				{
@@ -177,17 +177,17 @@ public class Program
             decimal interestAmount = Math.Max(MinInterestAmount,loanAmount * NetInterestRate);
 			//Console.Write("interest amount = " + interestAmount);
 			
-			decimal installmentAmount = (loanAmount + interestAmount)/(NoOfInstallments + 1);
+			decimal instalmentAmount = (loanAmount + interestAmount)/(NoOfInstalments + 1);
 			
-			decimal deposit = installmentAmount;
+			decimal deposit = instalmentAmount;
 			
 			var result = new CalculationResult
 			{
 				SinglePaymentTotal = singlePaymentTotal,
 				FinanceDeposit = deposit,
-				FinanceNumberOfInstallments = NoOfInstallments,
-				FinanceInstallmentAmount = installmentAmount,
-				FinanceTotalPayable = deposit + (NoOfInstallments * installmentAmount)
+				FinanceNumberOfInstalments = NoOfInstalments,
+				FinanceInstalmentAmount = instalmentAmount,
+				FinanceTotalPayable = deposit + (NoOfInstalments * instalmentAmount)
 				
 			};
 			
@@ -238,7 +238,7 @@ public class Program
 			DepositRate = 0.30M,
 			MaxloanAmount  = null,
 			MinLoanAmount  = 0,
-			NoOfInstallments  = 9,
+			NoOfInstalments  = 9,
 			NetInterestRate  = 0.09M,
 			MinInterestAmount = 0,
 			FinanceCharges = charges
@@ -249,8 +249,8 @@ public class Program
 		Console.WriteLine("Standard Plan");
 		Console.WriteLine($"  SinglePaymentTotal = {standardPlanResult.SinglePaymentTotal}");
 		Console.WriteLine($"  FinanceDeposit = {standardPlanResult.FinanceDeposit}");
-		Console.WriteLine($"  FinanceNumberOfInstallments = {standardPlanResult.FinanceNumberOfInstallments}");
-		Console.WriteLine($"  FinanceInstallmentAmount = {standardPlanResult.FinanceInstallmentAmount}");
+		Console.WriteLine($"  FinanceNumberOfInstalments = {standardPlanResult.FinanceNumberOfInstalments}");
+		Console.WriteLine($"  FinanceInstalmentAmount = {standardPlanResult.FinanceInstalmentAmount}");
 		Console.WriteLine($"  FinanceTotalPayable = {standardPlanResult.FinanceTotalPayable}");
 
 		CalculationResult levelPlanResult = calculation.CalculateLevelPlan();
@@ -258,8 +258,8 @@ public class Program
 		Console.WriteLine("Level Plan");		
 		Console.WriteLine($"  SinglePaymentTotal = {levelPlanResult.SinglePaymentTotal}");
 		Console.WriteLine($"  FinanceDeposit = {levelPlanResult.FinanceDeposit}");
-		Console.WriteLine($"  FinanceNumberOfInstallments = {levelPlanResult.FinanceNumberOfInstallments}");
-		Console.WriteLine($"  FinanceInstallmentAmount = {levelPlanResult.FinanceInstallmentAmount}");
+		Console.WriteLine($"  FinanceNumberOfInstalments = {levelPlanResult.FinanceNumberOfInstalments}");
+		Console.WriteLine($"  FinanceInstalmentAmount = {levelPlanResult.FinanceInstalmentAmount}");
 		Console.WriteLine($"  FinanceTotalPayable = {levelPlanResult.FinanceTotalPayable}");
 			
 	}
