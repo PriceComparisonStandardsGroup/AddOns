@@ -1,4 +1,4 @@
-# Guidance On Click Though
+# Guidance On Click Through
 
 On customer selection it could be considered that we do not need to denote any bundled or free add-ons because the feature included or provided for free, but it has been considered easier to explicitly define any add-ons the customer selects or must have in order to purchase the primary policy. So for all add-ons we will need to provide opt-in flags on click through and also denote the sub type of add-on that was selected. 
 
