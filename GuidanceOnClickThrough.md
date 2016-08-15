@@ -12,9 +12,9 @@ The details of the expected repayment plan, this is to allow insurers to identif
 To define the standard:
 - HTTPS transport only, to protect our customers from transaction sniffing.
 - POST only, not only to avoid the message size and encoding restrictions on GETS, also to secure any transactions.
-- Query string parameter names must be case sensitive to the standard Product/Services list we will finally agree on, with a Boolean value, true to denote opt-in.
+- Query string parameter names must be case sensitive to the standard Product/Services list we will finally agree on, with a string value as agreed with each partner to denote opt-in.
 - Omitted parameters we will be an implicit opt-out. This will allow add-on variety growth without breaking the standard and accidentally opting-in customers for new products.  
-- We need to send paramiters that denote the <i>expected</i> annual and monthly repayment plans as means to allow for the insurer to detect significant repayment calculation mismatch.
+- We need to send parameters that denote the <i>expected</i> annual and monthly repayment plans as means to allow for the insurer to detect significant repayment calculation mismatch.
 
 Sample Http Requests (Click-through Requests)
 For example, say we have the following product/services list (note that the URL is an example and does not indicate a standard):
